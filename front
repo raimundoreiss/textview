@@ -1,0 +1,202 @@
+import 'package:flutter/material.dart';
+
+class HomePage extends StatefulWidget {
+  const HomePage({super.key});
+
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+class _HomePageState extends State<HomePage>{
+
+  @override
+  Widget build(BuildContext context){
+    return SafeArea(
+        child: Scaffold(
+          backgroundColor: Colors.deepPurpleAccent[100],
+          appBar: AppBar(backgroundColor: Colors.indigo[900]),
+          body: buildBody(),
+          bottomNavigationBar: BottomNavigationBar( //botão voltar
+            currentIndex: selectedIndex,
+            onTap: (index) {
+            setState(() {
+              selectedIndex = index;
+              print(selectedIndex);
+            });
+            },
+            backgroundColor: Colors.white,
+            unselectedItemColor: Color(0xFF6C6C6C),
+            selectedItemColor: Color(0xFFFFFFFF),
+            showUnselectedLabels: true,
+            type: BottomNavigationBarType.fixed,
+              items: [
+                BottomNavigationBarItem(
+                  icon: Icon(Icons.arrow_back),
+                  label: 'Voltar',
+                ),
+              ],
+             bottomNavigationBar: BottomNavigationBar( //botão conta
+            currentIndex: selectedIndex,
+            onTap: (index) {
+            setState(() {
+              selectedIndex = index;
+              print(selectedIndex);
+            });
+            },
+            backgroundColor: Colors.white,
+            unselectedItemColor: Color(0xFF6C6C6C),
+            selectedItemColor: Color(0xFFFFFFFF),
+            showUnselectedLabels: true,
+            type: BottomNavigationBarType.fixed,
+              items: [
+                BottomNavigationBarItem(
+                  icon: Icon(Icons.arrow_back),
+                  label: 'Conta',
+          ),
+        )
+    );
+  }
+}
+buildBody(){
+
+}
+
+//Mapas mentais, resumos, flashcards, artigos
+buildContainer(){
+  return Scaffold(
+      body: ListView(
+        children: [
+        GridView(
+          shrinkWrap: true,
+          physics: NeverScrollableScrollPhysics(),
+          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 2,
+            mainAxisSpacing: 16,
+            crossAxisSpacing: 16,
+            childAspectRatio: 0.9,
+          ),
+          children: [
+            Stack(
+              children: [
+                Center(
+                  child: CircleAvatar(
+                    backgroundImage: NetworkImage(url),
+                    radius: 80,
+
+                    ),
+                  ),
+                  Align(
+                    alignment: Alignment.bottomCenter,
+                    child: Container(
+                    margin: EdgeInsets.only(bottom: 8),
+                    color: Colors.white,
+                    child: Text(
+                    style: TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            Stack(
+              children: [
+                Center(
+                  child: CircleAvatar(
+                    backgroundImage: NetworkImage(url),
+                    radius: 80,
+
+                  ),
+                ),
+                Align(
+                  alignment: Alignment.bottomCenter,
+                  child: Container(
+                    margin: EdgeInsets.only(bottom: 8),
+                    color: Colors.white,
+                    child: Text(
+                      style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            Stack(
+              children: [
+                Center(
+                  child: CircleAvatar(
+                    backgroundImage: NetworkImage(url),
+                    radius: 80,
+
+                  ),
+                ),
+                Align(
+                  alignment: Alignment.bottomCenter,
+                  child: Container(
+                    margin: EdgeInsets.only(bottom: 8),
+                    color: Colors.white,
+                    child: Text(
+                      style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            Stack(
+              children: [
+                Center(
+                  child: CircleAvatar(
+                    backgroundImage: NetworkImage(url),
+                    radius: 80,
+
+                  ),
+                ),
+                Align(
+                  alignment: Alignment.bottomCenter,
+                  child: Container(
+                    margin: EdgeInsets.only(bottom: 8),
+                    color: Colors.white,
+                    child: Text(
+                      style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            Stack(
+              children: [
+                Center(
+                  child: CircleAvatar(
+                    backgroundImage: NetworkImage(url),
+                    radius: 80,
+
+                  ),
+                ),
+                Align(
+                  alignment: Alignment.bottomCenter,
+                  child: Container(
+                    margin: EdgeInsets.only(bottom: 8),
+                    color: Colors.white,
+                    child: Text(
+                      style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            ],
+          ],
+     ),
+  );
+}
